@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 import "./Post.css";
 import RichTextEditor from "../RichTextEditor/RichTextEditor";
 import NavBar from "../NavBar/NavBar";
-import { ClipLoader } from "react-spinners";
 
 interface PostItem {
   title: string;
@@ -90,6 +89,8 @@ const Post: React.FC = () => {
           )}
           <div className="mt-4">
             <h5>Add Comment</h5>
+
+            {/* Using Custom Rich Text Editor to style the comments  */}
             <RichTextEditor onChange={setCommentContent} />
             <button
               className="btn btn-primary add_comment_btn"
@@ -99,6 +100,7 @@ const Post: React.FC = () => {
             </button>
           </div>
 
+          {/* Show all comments for the post  */}
           <div className="mt-4">
             <h5>Comments</h5>
             {post?.comments.map((comment, index) => (

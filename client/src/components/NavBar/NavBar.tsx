@@ -7,7 +7,6 @@ import axios from "axios";
 import API from "../../API";
 import { toast } from "react-toastify";
 import { ClipLoader } from "react-spinners";
-import { css } from "@emotion/react";
 
 const style = {
   position: "absolute" as "absolute",
@@ -68,6 +67,8 @@ const NavBar: React.FC = (): JSX.Element => {
 
   return (
     <nav>
+      {/* LoggedIn -> Show Create Post & Logout Button  */}
+      {/* LoggedOut -> Show Register & Login Button  */}
       {token ? (
         <div className="main-nav">
           <NavLink className="navbar-brand ml-4" to="/">
@@ -117,6 +118,8 @@ const NavBar: React.FC = (): JSX.Element => {
           </div>
         </div>
       )}
+
+      {/* Create Post Modal  */}
       <Modal
         open={openCreatePostModal}
         onClose={() => setOpenCreatePostModal(false)}

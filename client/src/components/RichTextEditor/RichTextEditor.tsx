@@ -22,6 +22,7 @@ const RichTextEditor: React.FC<RichTextEditorProps> = ({ onChange }) => {
 
   return (
     <div className="App">
+      {/* use only Bold and Italic styling features */}
       <Editor
         editorState={editorState}
         onEditorStateChange={setEditorState}

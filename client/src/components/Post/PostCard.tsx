@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./PostCard.css";
 
 interface PostCardProps {
@@ -18,6 +18,7 @@ const PostCard: React.FC<PostCardProps> = ({
   createdAt,
 }): JSX.Element => {
   return (
+    // Clicking on a post will reveal its comments and post contents + will allow you to add comments
     <Link
       to={`/post/${id}`}
       style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}

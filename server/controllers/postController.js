@@ -2,6 +2,7 @@ import Post from "../models/Post.js";
 import User from "../models/User.js";
 
 export const getAllPosts = async (req, res) => {
+  // sort the posts by their creation time -> to see the latest post at top
   try {
     const posts = await Post.find().sort({ createdAt: -1 }).populate({
       path: "userId",
@@ -14,6 +15,7 @@ export const getAllPosts = async (req, res) => {
 };
 
 export const getPost = async (req, res) => {
+  // Sort the comments in decreasing order for a post -> to see the latest comment at top
   try {
     const post = await Post.findById(req.params.id).populate({
       path: "comments",
